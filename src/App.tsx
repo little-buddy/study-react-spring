@@ -1,7 +1,8 @@
 import React from 'react';
+import FlipCard from '@/spring-demo/FlipCard';
 
 function App() {
-	return <div>default</div>;
+	return <FlipCard />;
 }
 
 export default App;

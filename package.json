@@ -15,6 +15,7 @@
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-scripts": "3.4.1",
+		"react-spring": "^8.0.27",
 		"react-toast-mobile": "^1.0.10",
 		"styled-components": "^5.0.1",
 		"styled-px2vw": "^1.0.9",

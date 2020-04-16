@@ -1,0 +1,16 @@
+.flip-card{
+	$width:80vw;
+	$height:$width*0.5;
+	&__graph{
+		position:absolute;
+		top:50%;
+		left:50%;
+		width: $width;
+		height: $height;
+		background-color: #ff8080;
+		margin-top:-$height/2;
+		margin-left: -$width/2;
+		border-radius: 10px;
+
+	}
+}

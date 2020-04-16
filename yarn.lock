@@ -7574,6 +7574,11 @@ normalize-range@^0.1.2:
   resolved "https://registry.npm.taobao.org/normalize-range/download/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=
 
+normalize-scss@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.npm.taobao.org/normalize-scss/download/normalize-scss-7.0.1.tgz#74485e82bb5d0526371136422a09fdb868ffc1a4"
+  integrity sha1-dEhegrtdBSY3ETZCKgn9uGj/waQ=
+
 normalize-selector@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npm.taobao.org/normalize-selector/download/normalize-selector-0.2.0.tgz#d0b145eb691189c63a78d201dc4fdb1293ef0c03"

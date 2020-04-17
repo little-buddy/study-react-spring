@@ -35,9 +35,8 @@ const Card: React.FC = () => {
 	}, []);
 
 	return (
-		<div>
+		<div onClick={toggle}>
 			<animated.div
-				onClick={toggle}
 				className="flip-card__graph"
 				style={{
 					opacity,
@@ -46,7 +45,6 @@ const Card: React.FC = () => {
 				}}
 			/>
 			<animated.div
-				onClick={toggle}
 				className="flip-card__graph"
 				style={{
 					transform,

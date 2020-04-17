@@ -9838,6 +9838,16 @@ react-transition-group@^2.2.0:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
+react-use-gesture@^7.0.14:
+  version "7.0.14"
+  resolved "https://registry.npm.taobao.org/react-use-gesture/download/react-use-gesture-7.0.14.tgz#a39854b4f26d8101fbbf1580e7fd557d43ca111b"
+  integrity sha1-o5hUtPJtgQH7vxWA5/1VfUPKERs=
+
+react-with-gesture@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.npm.taobao.org/react-with-gesture/download/react-with-gesture-4.0.8.tgz#ce6db9e667ef13120797e641f1a00f934aed6c36"
+  integrity sha1-zm255mfvExIHl+ZB8aAPk0rtbDY=
+
 react@^16.13.1:
   version "16.13.1"
   resolved "https://registry.npm.taobao.org/react/download/react-16.13.1.tgz?cache=0&sync_timestamp=1585595008776&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact%2Fdownload%2Freact-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"

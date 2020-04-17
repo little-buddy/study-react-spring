@@ -338,3 +338,11 @@ styled-components
     react-scripts 会覆盖 tsconfig.json 中的compilerOptions 属性
     所以更改 paths 需要添加 extends tsconfig.paths.json 
 ```
+
+### 发现了一个神奇的东西
+```text
+	国外快速建站模式
+	- Docusaurus
+	- GitHub pages
+	- Netlify
+```

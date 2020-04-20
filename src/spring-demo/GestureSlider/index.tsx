@@ -12,30 +12,34 @@ import './style.scss';
 
 		TODO
 			为什么我觉得这个东西这么智障 with-gesture 和 use-gesture 的差别
-
-
 * * */
 
 /*
 	TODO x 横向运动 然后 再做处理
 * * */
 const GestureSlider: React.FC = () => {
+	const downStatus = React.useRef(false);
 	const [props, set] = useSpring(() => ({
 		scale: 1,
-		bg: ['#f093fb', '#f5576c'],
+		bg: `linear-gradient(120deg, #f093fb 0%, #f5576c 100%)`,
 		x: 0,
 		immediate: name => {
-			return name === 'x';
+			return downStatus.current && name === 'x';
 		},
 	}));
 
 	const bind = useGesture({
 		onDrag: state => {
-			const { down, movement, delta, initial } = state;
-			console.log(delta);
+			const { down, movement } = state;
+			if (down !== downStatus.current) {
+				downStatus.current = down;
+			}
 			set({
 				scale: down ? 1.1 : 1,
-				bg: delta[0] < 0 ? ['#f093fb', '#f5576c'] : ['#96fbc4', '#f9f586'],
+				bg:
+					movement[0] < 0
+						? `linear-gradient(120deg, #f093fb 0%, #f5576c 100%)`
+						: `linear-gradient(120deg, #96fbc4 0%, #f9f586 100%)`,
 				x: down ? movement[0] : 0,
 			});
 		},
@@ -45,9 +49,30 @@ const GestureSlider: React.FC = () => {
 		<animated.div
 			{...bind()}
 			className="gesture-slider"
-			style={{ background: props.bg.interpolate(x => `linear-gradient(120deg, ${x[0]} 0%, ${x[1]} 100%)`) }}
+			style={{
+				// @ts-ignore
+				background: props.bg,
+			}}
 		>
-			<animated.div />
+			<animated.div
+				className="gesture-slider__circle"
+				style={{
+					transform: props.x
+						.interpolate({
+							// @ts-ignore
+							map: Math.abs,
+							range: [50, 300],
+							output: [0.5, 1.5],
+							extrapolate: 'clamp',
+						})
+						.interpolate((o: any) => {
+							return `scale(${o})`;
+						}),
+					alignSelf: props.x.interpolate(o => {
+						return o > 0 ? 'flex-start' : 'flex-end';
+					}),
+				}}
+			/>
 			<animated.div
 				className="gesture-slider__front"
 				style={{

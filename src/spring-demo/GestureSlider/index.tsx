@@ -18,22 +18,15 @@ import './style.scss';
 	TODO x 横向运动 然后 再做处理
 * * */
 const GestureSlider: React.FC = () => {
-	const downStatus = React.useRef(false);
 	const [props, set] = useSpring(() => ({
 		scale: 1,
 		bg: `linear-gradient(120deg, #f093fb 0%, #f5576c 100%)`,
 		x: 0,
-		immediate: name => {
-			return downStatus.current && name === 'x';
-		},
 	}));
 
 	const bind = useGesture({
 		onDrag: state => {
 			const { down, movement } = state;
-			if (down !== downStatus.current) {
-				downStatus.current = down;
-			}
 			set({
 				scale: down ? 1.1 : 1,
 				bg:
@@ -41,6 +34,7 @@ const GestureSlider: React.FC = () => {
 						? `linear-gradient(120deg, #f093fb 0%, #f5576c 100%)`
 						: `linear-gradient(120deg, #96fbc4 0%, #f9f586 100%)`,
 				x: down ? movement[0] : 0,
+				immediate: name => down && name === 'x',
 			});
 		},
 	});

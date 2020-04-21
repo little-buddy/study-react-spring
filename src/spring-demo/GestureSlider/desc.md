@@ -23,3 +23,12 @@ cancel 触发应该会改变 canceled 的值
 	react-spring 的结构浏览器兼容措施
 	最好能在入口层做一个当下浏览器兼容的配置，那简直就是完美了
 ```
+
+```text
+movement expresses the gesture movement,
+while offset is the sum of all gesture movements on the same component.
+```
+
+```text
+一些 useSpring 的配置也是可以直接通过 set 的形式触发的
+```
